@@ -379,3 +379,53 @@ const isPalindrome = function (str) {
     } else { return false }  
 };  
 ```  
+
+### Sum of Odd Numbers Triangle
+## Given the triangle of consecutive odd numbers:
+             1
+          3     5
+       7     9    11
+   13    15    17    19
+21    23    25    27    29
+Calculate the row sums of this triangle from the row index (starting at index 1) e.g.:
+
+```
+rowSumOddNumbers(1); // 1
+rowSumOddNumbers(2); // 3 + 5 = 8
+
+```
+
+```
+function rowSumOddNumbers(n) {
+	let rEnd = 1;
+  let rStart = 1;
+  let accEnd = 4;
+  let accStart = 2;
+  let sum = 0;
+  
+  if (n == 1) {
+    return 1
+  }
+  
+  for (let i = 1; i < n; i++) {
+    rEnd+=accEnd;
+    accEnd+=2;
+    rStart+=accStart;
+    accStart+=2
+  }
+  
+  for (let i = rStart; i <= rEnd; i+=2) {
+    sum+=i
+  }
+    return sum
+}
+```
+
+
+
+
+
+
+
+
+
